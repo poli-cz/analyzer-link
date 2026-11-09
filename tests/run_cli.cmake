@@ -1,0 +1,11 @@
+# Runs link-cli on INPUT and compares its output with EXPECTED.
+execute_process(COMMAND "${CLI}" INPUT_FILE "${INPUT}" OUTPUT_VARIABLE actual RESULT_VARIABLE rc)
+if(NOT rc EQUAL 0)
+  message(FATAL_ERROR "link-cli exited with ${rc}")
+endif()
+file(READ "${EXPECTED}" expected)
+string(REPLACE "\r\n" "\n" expected "${expected}")
+string(REPLACE "\r\n" "\n" actual "${actual}")
+if(NOT actual STREQUAL expected)
+  message(FATAL_ERROR "link-cli output differs from ${EXPECTED}\n--- actual ---\n${actual}")
+endif()

@@ -1,0 +1,11 @@
+heartbeat AN-07 protocol 2.6 ok
+result AN-07 S-1001 GLU 5.4 mmol/L
+result AN-07 S-1002 CREA 88 umol/L
+error AN-07 code=9 "Reagent empty" lis=E|AN-07|S-1003|R|Reagent empty
+result AN-07 S-1004 GLU 6.1 mmol/L
+error AN-07 code=3 "Door open" lis=E|AN-07|-|H|Door open
+heartbeat AN-07 protocol 2.6 ok
+error AN-07 code=12 "Wash station failure" lis=E|AN-07|-|H|Wash station failure
+result AN-07 S-1005 ALT 0.62 ukat/L
+error AN-07 code=10 "Sample volume too low" lis=E|AN-07|S-1006|S|Sample volume too low
+result AN-07 S-1007 GLU 4.9 mmol/L

@@ -1,0 +1,9 @@
+# AN-12, day shift 2026-10-21, firmware 3.1
+HB|AN-12|2.6
+ERR|AN-12|11|-
+RES|AN-12|S-2001|K|4.1|mmol/L
+ERR|AN-12|0|S-2002
+RES|AN-12|S-2003|NA|139|mmol/L
+ERR|AN-12|13|-
+ERR|AN-12|6|-
+HB|AN-12|2.6

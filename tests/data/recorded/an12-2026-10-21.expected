@@ -1,0 +1,8 @@
+heartbeat AN-12 protocol 2.6 ok
+error AN-12 code=11 "Reaction temperature drift" lis=E|AN-12|-|Q|Reaction temperature drift
+result AN-12 S-2001 K 4.1 mmol/L
+error AN-12 code=0 "Barcode unreadable" lis=E|AN-12|S-2002|S|Barcode unreadable
+result AN-12 S-2003 NA 139 mmol/L
+error AN-12 code=13 "Waste container full" lis=E|AN-12|-|H|Waste container full
+error AN-12 code=6 "Reagent lid open" lis=E|AN-12|-|R|Reagent lid open
+heartbeat AN-12 protocol 2.6 ok

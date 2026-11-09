@@ -1,0 +1,48 @@
+# clang-tidy configuration for first-party code (src/, apps/, include/).
+# Tests are not checked: GoogleTest macros trigger many false positives.
+#
+# Disabled checks and why:
+#   modernize-use-trailing-return-type        style choice, classic return types
+#   readability-identifier-length             short names are fine in small scopes
+#   readability-magic-numbers,
+#   cppcoreguidelines-avoid-magic-numbers     duplicates of each other
+#   cppcoreguidelines-pro-bounds-pointer-arithmetic  needed for argv handling
+#   bugprone-easily-swappable-parameters      too noisy for small value types
+#   misc-include-cleaner                      include-what-you-use rules, too noisy
+#   portability-avoid-pragma-once             the code base uses #pragma once on purpose
+#   readability-trailing-comma                formatting is clang-format's job
+#   cppcoreguidelines-pro-bounds-avoid-unchecked-container-access
+#                                             operator[] on indices checked right before
+#   bugprone-exception-escape                 false positives with libc++
+#   modernize-use-designated-initializers,
+#   modernize-use-integer-sign-comparison     style
+Checks: >
+  -*,
+  bugprone-*,
+  cert-*,
+  clang-analyzer-*,
+  cppcoreguidelines-*,
+  misc-*,
+  modernize-*,
+  performance-*,
+  portability-*,
+  readability-*,
+  -modernize-use-trailing-return-type,
+  -readability-identifier-length,
+  -readability-magic-numbers,
+  -cppcoreguidelines-avoid-magic-numbers,
+  -cppcoreguidelines-pro-bounds-pointer-arithmetic,
+  -bugprone-easily-swappable-parameters,
+  -misc-include-cleaner,
+  -portability-avoid-pragma-once,
+  -readability-trailing-comma,
+  -cppcoreguidelines-pro-bounds-avoid-unchecked-container-access,
+  -bugprone-exception-escape,
+  -modernize-use-designated-initializers,
+  -modernize-use-integer-sign-comparison
+WarningsAsErrors: '*'
+HeaderFilterRegex: '.*[/\\](include[/\\]alink|src|apps)[/\\].*'
+FormatStyle: file
+CheckOptions:
+  - key: readability-function-cognitive-complexity.Threshold
+    value: '25'
